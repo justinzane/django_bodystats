@@ -1,3 +1,6 @@
 *.class
 *.pyc
 *.pyo
+src/django_bodystats/BodyStats/static/extjs
+src/django_bodystats/BodyStats.db
+src/django_bodystats/django.log
