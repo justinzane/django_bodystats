@@ -10,8 +10,9 @@ Ext.Loader.setConfig({
 Ext.application({
 	name : 'BodyStats',
 	appFolder : 'static/app',
-	models : ['BodyStats.model.User', 'BodyStats.model.Weight', 'BodyStats.model.BloodPressure'],
-	stores : ['BodyStats.store.User', 'BodyStats.store.Weight', 'BodyStats.store.BloodPressure'],
+	id: 'bodystats',
+	models : ['BodyStats.model.CurrentUser', 'BodyStats.model.Weight', 'BodyStats.model.BloodPressure'],
+	stores : ['BodyStats.store.CurrentUser', 'BodyStats.store.Weight', 'BodyStats.store.BloodPressure'],
 	controllers : ['BodyStats.controller.Header', 'BodyStats.controller.Weight', 'BodyStats.controller.BloodPressure'],
 	launch : function() {
 		console.log('Starting app.launch');

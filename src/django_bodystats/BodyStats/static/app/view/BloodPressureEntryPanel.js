@@ -44,8 +44,9 @@ Ext.define('BodyStats.view.BloodPressureEntryPanel', {
             if (form.isValid()) {
             	// create new model instance and upload it
                 var vals = form.getValues();
+                var currentUserId = Ext.data.StoreManager.lookup('currentUserStore').first().getData().id
                 var mi = new BodyStats.model.BloodPressure({
-                	user: '/api/v1/user/1/',
+                	user: '/api/v1/user/' + currentUserId + '/',
                 	timestamp: (vals['entry_date']+'T'+vals['entry_time']),
                 	systolic: vals['entry_systolic'],
                 	diastolic: vals['entry_diastolic']

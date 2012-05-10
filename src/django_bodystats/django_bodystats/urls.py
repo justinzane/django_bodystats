@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from tastypie.api import Api
 from BodyStats.api import *
-from BodyStats.views import index
+from BodyStats.views import index, current_user
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import allauth.urls
 admin.autodiscover()
@@ -24,5 +24,6 @@ urlpatterns = patterns('',
     (r'^accounts/', include('allauth.urls')),
     # Main App Page
     (r'^index[html.].*$', 'BodyStats.views.index'),
+    (r'^current_user\.json$', 'BodyStats.views.current_user'),
 )
 urlpatterns += staticfiles_urlpatterns()

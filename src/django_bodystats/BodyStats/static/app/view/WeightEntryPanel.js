@@ -36,8 +36,9 @@ Ext.define('BodyStats.view.WeightEntryPanel', {
             if (form.isValid()) {
             	// create new model instance and upload it
                 var vals = form.getValues();
+                var currentUserId = Ext.data.StoreManager.lookup('currentUserStore').first().getData().id
                 var mi = new BodyStats.model.Weight({
-                	user: '/api/v1/user/1/',
+                	user: '/api/v1/user/' + currentUserId + '/',
                 	timestamp: (vals['entry_date']+'T'+vals['entry_time']),
                 	weight: vals['entry_weight']
             	});

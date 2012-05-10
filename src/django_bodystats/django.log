@@ -331,3 +331,151 @@ Traceback (most recent call last):
   File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 40
     return object_list.filter('id'=request.user)
 SyntaxError: keyword can't be an expression
+Internal Server Error: /api/v1/user/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 129, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view tastypie.resources.wrapper didn't return an HttpResponse object.
+Internal Server Error: /api/v1/user/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 129, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view tastypie.resources.wrapper didn't return an HttpResponse object.
+Internal Server Error: /api/v1/user/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 129, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view tastypie.resources.wrapper didn't return an HttpResponse object.
+Internal Server Error: /api/v1/user/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 298, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 328, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 323, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/django_bodystats/urls.py", line 4, in <module>
+    from BodyStats.api import *
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 29, in <module>
+    class UserResource(ModelResource):
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 30, in UserResource
+    class Meta:
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 31, in Meta
+    queryset = ger_user(request)
+NameError: name 'ger_user' is not defined
+Internal Server Error: /api/v1/user/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 298, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 328, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 323, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/django_bodystats/urls.py", line 4, in <module>
+    from BodyStats.api import *
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 29, in <module>
+    class UserResource(ModelResource):
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 30, in UserResource
+    class Meta:
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/api.py", line 31, in Meta
+    queryset = get_user(request)
+NameError: name 'request' is not defined
+Not Found: /current_user
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 14, in current_user
+    cu = serializers.serialize('json', get_user(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/__init__.py", line 98, in serialize
+    s.serialize(queryset, **options)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/base.py", line 42, in serialize
+    for obj in queryset:
+TypeError: 'User' object is not iterable
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 15, in current_user
+    cu = serializers.serialize('json', User.objects.get(pk=get_user(request).pk))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/__init__.py", line 98, in serialize
+    s.serialize(queryset, **options)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/base.py", line 42, in serialize
+    for obj in queryset:
+TypeError: 'User' object is not iterable
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 15, in current_user
+    cu = serializers.serialize('json', User.objects.get(pk=(get_user(request).pk)))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/__init__.py", line 98, in serialize
+    s.serialize(queryset, **options)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/base.py", line 42, in serialize
+    for obj in queryset:
+TypeError: 'User' object is not iterable
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 16, in current_user
+    cu = serializers.serialize('json', User.objects.get(pk=cupk))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/__init__.py", line 98, in serialize
+    s.serialize(queryset, **options)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/base.py", line 42, in serialize
+    for obj in queryset:
+TypeError: 'User' object is not iterable
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 18, in current_user
+    cu = serializers.serialize('json', User.objects.get(pk=cupk))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/__init__.py", line 98, in serialize
+    s.serialize(queryset, **options)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/serializers/base.py", line 42, in serialize
+    for obj in queryset:
+TypeError: 'User' object is not iterable
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 14, in current_user
+    cu = json.dumps(get_user(request))
+  File "/usr/lib/python2.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib/python2.7/json/encoder.py", line 201, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python2.7/json/encoder.py", line 264, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python2.7/json/encoder.py", line 178, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <User: admin> is not JSON serializable
+Internal Server Error: /current_user.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 14, in current_user
+    cu = json.dumps(get_user(request).__dict__)
+  File "/usr/lib/python2.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib/python2.7/json/encoder.py", line 201, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python2.7/json/encoder.py", line 264, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python2.7/json/encoder.py", line 178, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <django.db.models.base.ModelState object at 0x7f4954487e10> is not JSON serializable
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
