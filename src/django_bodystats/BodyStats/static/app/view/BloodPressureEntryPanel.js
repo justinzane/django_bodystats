@@ -1,7 +1,7 @@
 Ext.define('BodyStats.view.BloodPressureEntryPanel', {
 	extend : 'Ext.form.Panel',
 	alias : 'widget.bloodpressureentrypanel',
-	title : 'BloodPressure Entry',
+	title : 'Blood Pressure Entry',
 	layout: 'anchor',
 	items: [{
 		xtype: 'datefield',

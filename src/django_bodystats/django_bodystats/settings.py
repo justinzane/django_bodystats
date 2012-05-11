@@ -10,10 +10,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'BodyStats.db', # Or path to database file if using sqlite3.
-        'USER': '', # Not used with sqlite3.
-        'PASSWORD': '', # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '', # Set to empty string for default. Not used with sqlite3.
+        'USER': '', 'PASSWORD': '', 'HOST': '', 'PORT': '',
     }
 }
 TIME_ZONE = 'America/Los_Angeles'
@@ -50,8 +47,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'django.contrib.auth.context_processors.auth',
-    "allauth.context_processors.allauth",
-    "allauth.account.context_processors.account"
 )
 TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DIRS = ()
@@ -70,37 +65,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'emailconfirmation',
-    'uni_form',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.twitter',
-    'allauth.openid',
-    'allauth.facebook',
     'tastypie',
     'BodyStats'
 )
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
-AUTHENTICATION_BACKENDS = (
-    "allauth.account.auth_backends.AuthenticationBackend",
-)
 AUTH_PROFILE_MODULE = 'BodyStats.UserProfile'
-# http://pypi.python.org/pypi/django-allauth/0.4.0
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = True 
-ACCOUNT_EMAIL_AUTHENTICATION = True
-ACCOUNT_EMAIL_SUBJECT_PREFIX = "BodyStats "
-ACCOUNT_SIGNUP_FORM_CLASS = None
-ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = False
-SOCIALACCOUNT_QUERY_EMAIL = ACCOUNT_EMAIL_REQUIRED
-SOCIALACCOUNT_AUTO_SIGNUP = True
-SOCIALACCOUNT_AVATAR_SUPPORT = False
-EMAIL_CONFIRMATION_DAYS = 5
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

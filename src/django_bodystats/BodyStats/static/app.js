@@ -11,9 +11,18 @@ Ext.application({
 	name : 'BodyStats',
 	appFolder : 'static/app',
 	id: 'bodystats',
-	models : ['BodyStats.model.CurrentUser', 'BodyStats.model.Weight', 'BodyStats.model.BloodPressure'],
+	models : [
+		'BodyStats.model.CurrentUser', 
+		'BodyStats.model.Weight', 
+		'BodyStats.model.BloodPressure'
+	],
 	stores : ['BodyStats.store.CurrentUser', 'BodyStats.store.Weight', 'BodyStats.store.BloodPressure'],
-	controllers : ['BodyStats.controller.Header', 'BodyStats.controller.Weight', 'BodyStats.controller.BloodPressure'],
+	controllers : [
+		'BodyStats.controller.Header', 
+		'BodyStats.controller.UserAction',
+		'BodyStats.controller.Weight', 
+		'BodyStats.controller.BloodPressure'
+	],
 	launch : function() {
 		console.log('Starting app.launch');
 		Ext.create('Ext.container.Viewport', {
@@ -28,6 +37,17 @@ Ext.application({
 				region: 'center',
 				layout : 'accordion',
 				items : [{
+					xtype: 'panel',
+					title: 'User Actions',
+					layout: 'accordion',
+					items: [{
+						xtype: 'loginpanel'
+					}, {
+						xtype: 'logoutpanel'
+					}, {
+						xtype: 'registrationpanel'
+					}]
+				}, {
 					xtype : 'weightentrypanel'
 				}, {
 					xtype : 'panel',
