@@ -1,0 +1,15 @@
+$boundlist-background-color: #fff !default;
+$css-shadow-background-color: #ccc !default;
+$form-field-background-color: #fff !default;
+$form-field-invalid-background-color: #fff !default;
+$grid-grouped-header-background-color: #fff;
+$loadmask-msg-inner-background-color: #eee !default;
+$menu-background-color: #F0F0F0 !default;
+$menu-separator-background-color: #FFF !default;
+$panel-body-background-color: #fff !default;
+$colorpicker-over-background-color: #deecfd !default;
+$datepicker-background-color: #ffffff !default;
+$datepicker-header-background-color: adjust-color($datepicker-base-color, $hue: 5.768deg, $saturation: 0.419%, $lightness: -52.941%) !default; //#23427c
+$datepicker-th-background-color: adjust-color($datepicker-base-color, $hue: -1.19deg, $saturation: 22.222%, $lightness: 8.824%) !default; //#dfecfb
+$datepicker-item-hover-background-color: adjust-color($datepicker-base-color, $hue: -0.606deg, $saturation: 38.73%, $lightness: 9.02%) !default; //#ddecfe
+$tip-error-background-color: #fff !default;

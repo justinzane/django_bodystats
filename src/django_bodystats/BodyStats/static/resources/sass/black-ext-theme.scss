@@ -1,0 +1,848 @@
+$include-default: false;
+$prefix: 'x-' !default;
+$theme-name: 'default' !default;
+$relative-image-path-for-uis: false !default;
+$include-missing-images: true !default;
+$include-ie: true !default;
+$include-ff: true !default;
+$include-chrome: true !default;
+$include-safari: true !default;
+$include-opera: true !default;
+$include-webkit: true !default;
+$supports-border-radius: true !default;
+$supports-gradients: true !default;
+$compile-all: true !default;
+$scope-reset-css: false !default;
+$include-shadow-images: true !default;
+
+/**
+ *   Custom Styles Here
+ */
+$color: #ffffff !default;
+$font-family: "DejaVu Sans",tahoma,arial,verdana,sans-serif !default;
+$font-size  : 12px !default;
+$base-gradient: 'matte' !default;
+$base-color   : #3f1f1f !default;
+$neutral-color: #ff0000 !default;
+$background-color: #000000 !default;
+$css-shadow-background-color: #3f3f3f !default;
+$focus-frame-color: rgb(21, 66, 139) !default;
+$focus-frame-style: solid;
+$focus-frame-width: 2px;
+
+// Backgrounds
+$boundlist-background-color: $background-color !default;
+$form-field-background-color: $background-color !default;
+$form-field-invalid-background-color: $background-color !default;
+$grid-grouped-header-background-color: $background-color;
+$loadmask-msg-inner-background-color: adjust-color($background-color, $lightness: +6.25%) !default;
+$menu-background-color: adjust-color($background-color, $lightness: +5.88%) !default;
+$menu-separator-background-color: $background-color !default;
+$panel-body-background-color: $background-color !default;
+$colorpicker-over-background-color: adjust-color($background-color, $hue: -213deg, $saturation: +11%, $lightness: +7%) !default;
+$datepicker-background-color: $background-color !default;
+$tip-error-background-color: $background-color !default;
+
+/**
+ *   End Custom Styles
+ */
+
+@import 'ext4/default/all';
+@include extjs-boundlist;
+@include extjs-button;
+@include extjs-btn-group;
+@include extjs-datepicker;
+@include extjs-colorpicker;
+@include extjs-menu;
+@include extjs-grid;
+@include extjs-form;
+    @include extjs-form-field;
+    @include extjs-form-fieldset;
+    @include extjs-form-file;
+    @include extjs-form-checkboxfield;
+    @include extjs-form-checkboxgroup;
+    @include extjs-form-triggerfield;
+    @include extjs-form-htmleditor;
+@include extjs-panel;
+@include extjs-qtip;
+@include extjs-slider;
+@include extjs-progress;
+@include extjs-toolbar;
+@include extjs-window;
+@include extjs-messagebox;
+@include extjs-tabbar;
+@include extjs-tab;
+@include extjs-tree;
+@include extjs-drawcomponent;
+@include extjs-viewport;
+
+// This line changes the location of your images when creating UIs to be relative instead of within the ExtJS directory.
+// You MUST set this to true/string value if you are creating new UIs + supporting legacy browsers.
+// This only applies to new UIs. It does not apply to default component images (i.e. when changing $base-color)
+// The value can either be true, in which case the image path will be "../images/"
+// or a string, of where the path is
+$relative-image-path-for-uis: true; // defaults to "../images/" when true
+
+// All available SASS variables from: ../..//extjs/resources/themes/stylesheets/ext4/default/variables/
+
+/** boundlist
+//background
+$boundlist-background-color: #fff !default;
+
+//borders
+$boundlist-border-color: adjust-color($base-color, $hue: 0.58deg, $saturation: 25.146%, $lightness: -6.471%) !default;
+$boundlist-border-width: 1px !default;
+$boundlist-border-style: solid !default;
+
+$boundlist-item-padding: 2px !default;
+$boundlist-item-border-width: 1px !default;
+$boundlist-item-border-style: dotted !default;
+$boundlist-item-border-color: $boundlist-background-color !default;
+
+$boundlist-item-over-border-color: adjust-color($base-color, $hue: 6.952deg, $saturation: 5.848%, $lightness: -6.471%) !default;
+$boundlist-item-selected-border-color: darken($boundlist-item-over-border-color, 5) !default;
+
+$boundlist-item-over-background-color: adjust-color($base-color, $hue: 3.188deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+$boundlist-item-selected-background-color: darken($boundlist-item-over-background-color, 5) !default;
+*/
+/** button
+$btn-group-background-color: adjust-color($base-color, $hue: 1deg, $saturation: -4%, $lightness: 3.8%) !default;
+$btn-group-margin: 2px 0 !default;
+$btn-group-border-color: adjust-color($base-color, $hue: -5deg, $saturation: -27%, $lightness: -6%) !default;
+$btn-group-border-radius: 2px !default;
+$btn-group-border-width: 1px !default;
+$btn-group-padding: 0 1px !default;
+
+$btn-group-inner-border-width: 1px !default;
+$btn-group-inner-border-color: adjust-color($base-color, $saturation: -9%, $lightness: 8.5%) !default;
+
+$btn-group-header-margin: 2px 2px 0 2px !default;
+$btn-group-header-font: normal ceil($font-size * .9) $font-family !default;
+$btn-group-header-color: adjust-color($base-color, $hue: 2.6deg, $saturation: -9%, $lightness: -38.5%) !default;
+$btn-group-header-padding: 1px 0 !default;
+$btn-group-header-background-color: adjust-color($base-color, $hue: -2deg, $saturation: 5%, $lightness: 1%) !default;
+$button-arrow-size: 12px !default;
+$button-split-size: 14px !default;
+$button-icon-spacing: 4px !default;
+
+$button-small-border-radius: 3px !default;
+$button-small-border-width: 1px !default;
+$button-small-padding: 2px !default;
+$button-small-text-padding: 4px;
+$button-small-font-size: ceil($font-size * .9) !default; //11px
+$button-small-font-size-over: $button-small-font-size !default;
+$button-small-font-size-focus: $button-small-font-size-over;
+$button-small-font-size-pressed: $button-small-font-size !default;
+$button-small-font-size-disabled: $button-small-font-size !default;
+$button-small-font-weight: normal !default;
+$button-small-font-weight-over: $button-small-font-weight !default;
+$button-small-font-weight-focus: $button-small-font-weight-over;
+$button-small-font-weight-pressed: $button-small-font-weight !default;
+$button-small-font-weight-disabled: $button-small-font-weight !default;
+$button-small-font-family: $font-family !default;
+$button-small-font-family-over: $button-small-font-family !default;
+$button-small-font-family-focus: $button-small-font-family-over;
+$button-small-font-family-pressed: $button-small-font-family !default;
+$button-small-font-family-disabled: $button-small-font-family !default;
+$button-small-icon-size: 16px !default;
+
+$button-medium-border-radius: 3px !default;
+$button-medium-border-width: 1px !default;
+$button-medium-padding: 3px !default;
+$button-medium-text-padding: 3px;
+$button-medium-font-size: ceil($font-size * .9) !default; //11px
+$button-medium-font-size-over: $button-medium-font-size !default;
+$button-medium-font-size-focus: $button-medium-font-size-over;
+$button-medium-font-size-pressed: $button-medium-font-size !default;
+$button-medium-font-size-disabled: $button-medium-font-size !default;
+$button-medium-font-weight: normal !default;
+$button-medium-font-weight-over: $button-medium-font-weight !default;
+$button-medium-font-weight-focus: $button-medium-font-weight-over;
+$button-medium-font-weight-pressed: $button-medium-font-weight !default;
+$button-medium-font-weight-disabled: $button-medium-font-weight !default;
+$button-medium-font-family: $font-family !default;
+$button-medium-font-family-over: $button-medium-font-family !default;
+$button-medium-font-family-focus: $button-medium-font-family-over;
+$button-medium-font-family-pressed: $button-medium-font-family !default;
+$button-medium-font-family-disabled: $button-medium-font-family !default;
+$button-medium-icon-size: 24px !default;
+
+$button-large-border-radius: 3px !default;
+$button-large-border-width: 1px !default;
+$button-large-padding: 3px !default;
+$button-large-text-padding: 3px;
+$button-large-font-size: ceil($font-size * .9) !default; //11px
+$button-large-font-size-over: $button-large-font-size !default;
+$button-large-font-size-focus: $button-large-font-size-over;
+$button-large-font-size-pressed: $button-large-font-size !default;
+$button-large-font-size-disabled: $button-large-font-size !default;
+$button-large-font-weight: normal !default;
+$button-large-font-weight-over: $button-large-font-weight !default;
+$button-large-font-weight-focus: $button-large-font-weight-over;
+$button-large-font-weight-pressed: $button-large-font-weight !default;
+$button-large-font-weight-disabled: $button-large-font-weight !default;
+$button-large-font-family: $font-family !default;
+$button-large-font-family-over: $button-large-font-family !default;
+$button-large-font-family-focus: $button-large-font-family-over;
+$button-large-font-family-pressed: $button-large-font-family !default;
+$button-large-font-family-disabled: $button-large-font-family !default;
+$button-large-icon-size: 32px !default;
+
+//base colors for the default button
+$button-default-base-color: adjust-color($neutral-color, $hue: 0deg, $saturation: -55.556%, $lightness: 12.745%) !default; //F7F7F7
+$button-default-base-color-over: adjust-color($base-color, $hue: -6.667deg, $saturation: 44.444%, $lightness: 10.588%) !default; //E4F3FF
+$button-default-base-color-focus: $button-default-base-color-over !default;
+$button-default-base-color-pressed: adjust-color($base-color, $hue: -0.725deg, $saturation: -9.556%, $lightness: -3.725%) !default; //B6CBE4
+$button-default-base-color-disabled: adjust-color($base-color, $hue: 0deg, $saturation: -55.556%, $lightness: 12.745%) !default; //F7F7F7
+
+$button-default-border-color: adjust-color($button-default-base-color, $hue: 0deg, $saturation: 0%, $lightness: -18.039%) !default;
+$button-default-border-color-over: adjust-color($button-default-base-color-over, $hue: 8.177deg, $saturation: -28.283%, $lightness: -12.745%) !default;
+$button-default-border-color-focus: $button-default-border-color-over !default;
+$button-default-border-color-pressed: adjust-color($button-default-base-color-pressed, $hue: 2.317deg, $saturation: 6.756%, $lightness: -5.294%) !default;
+$button-default-border-color-disabled: adjust-color($button-default-base-color-disabled, $hue: 0deg, $saturation: 0%, $lightness: -8.627%) !default;
+
+$button-default-background-color: $button-default-base-color !default;
+$button-default-background-color-over: $button-default-base-color-over !default;
+$button-default-background-color-focus: $button-default-background-color-over !default;
+$button-default-background-color-pressed: $button-default-base-color-pressed !default;
+$button-default-background-color-disabled: $button-default-base-color-disabled !default;
+
+$button-default-background-gradient: 'glossy-button' !default;
+$button-default-background-gradient-over: 'glossy-button-over' !default;
+$button-default-background-gradient-focus: $button-default-background-gradient-over !default;
+$button-default-background-gradient-pressed: 'glossy-button-pressed' !default;
+$button-default-background-gradient-disabled: 'glossy-button-disabled' !default;
+
+$button-default-background-gradient-color-stops: null !default;
+$button-default-background-gradient-color-stops-over: $button-default-background-gradient-color-stops !default;
+$button-default-background-gradient-color-stops-focus: $button-default-background-gradient-color-stops-over !default;
+$button-default-background-gradient-color-stops-pressed: $button-default-background-gradient-color-stops !default;
+$button-default-background-gradient-color-stops-disabled: $button-default-background-gradient-color-stops !default;
+
+$button-default-color: #333 !default;
+$button-default-color-over: $button-default-color !default;
+$button-default-color-focus: $button-default-color-over !default;
+$button-default-color-pressed: $button-default-color !default;
+$button-default-color-disabled: lighten($button-default-color, 35) !default;
+
+//Toolbar buttons
+$button-toolbar-arrow-size: 12px !default;
+$button-toolbar-split-size: 12px !default;
+
+$button-toolbar-base-color: adjust-color($base-color, $hue: -213.333deg, $saturation: -55.556%, $lightness: 3.333%) !default;
+
+$button-toolbar-border-color: transparent !default;
+$button-toolbar-border-color-over: adjust-color($base-color, $hue: 0.084deg, $saturation: -9.891%, $lightness: -18.039%) !default;
+$button-toolbar-border-color-focus: $button-toolbar-border-color-over;
+$button-toolbar-border-color-pressed: adjust-color($base-color, $hue: 0.721deg, $saturation: -17.014%, $lightness: -21.765%) !default;
+$button-toolbar-border-color-disabled: transparent !default;
+
+$button-toolbar-background-color: transparent !default;
+$button-toolbar-background-color-over: adjust-color($base-color, $hue: -5deg, $saturation: 44.444%, $lightness: 8.824%) !default;
+$button-toolbar-background-color-focus: $button-toolbar-background-color-over;
+$button-toolbar-background-color-pressed: adjust-color($base-color, $hue: -1.138deg, $saturation: -11.47%, $lightness: -2.353%) !default;
+$button-toolbar-background-color-disabled: transparent !default;
+
+$button-toolbar-background-gradient: null !default;
+$button-toolbar-background-gradient-over: 'glossy-button-over' !default;
+$button-toolbar-background-gradient-focus: $button-toolbar-background-gradient-over;
+$button-toolbar-background-gradient-pressed: 'glossy-button-pressed' !default;
+$button-toolbar-background-gradient-disabled: null !default;
+
+$button-toolbar-background-gradient-color-stops: null !default;
+$button-toolbar-background-gradient-color-stops-over: null !default;
+$button-toolbar-background-gradient-color-stops-focus: $button-toolbar-background-gradient-color-stops-over;
+$button-toolbar-background-gradient-color-stops-pressed: null !default;
+$button-toolbar-background-gradient-color-stops-disabled: null !default;
+
+$button-toolbar-color: #333 !default;
+$button-toolbar-color-over: $button-toolbar-color !default;
+$button-toolbar-color-focus: $button-toolbar-color-over;
+$button-toolbar-color-pressed: $button-toolbar-color !default;
+$button-toolbar-color-disabled: lighten($button-toolbar-color, 35) !default;
+*/
+
+/** Forms
+
+$form-field-height: 22px !default;
+$form-toolbar-field-height: 20px !default;
+$form-error-icon-width: 18px !default;
+
+//padding
+$form-field-padding: 1px 3px !default;
+
+//fonts
+$form-field-font-size: $font-size !default;
+
+$form-field-font-family: $font-family !default;
+$form-field-font-weight: normal !default;
+$form-field-font: $form-field-font-weight $form-field-font-size $form-field-font-family !default;
+$form-field-color: #000 !default;
+
+$form-field-empty-color: gray !default;
+
+//border
+$form-field-border-color: #B5B8C8 !default;
+$form-field-border-width: 1px !default;
+
+$form-field-focus-border-color: adjust-color($base-color, $hue: -4.322deg, $saturation: -1.065%, $lightness: -16.863%) !default;
+$form-field-invalid-border-color: #c30 !default;
+
+//background
+$form-field-background-color: #fff !default;
+$form-field-background-image: 'form/text-bg.gif' !default;
+
+$form-field-invalid-background-color: #fff !default;
+$form-field-invalid-background-image: 'grid/invalid_line.gif' !default;
+$form-field-invalid-background-repeat: repeat-x !default;
+$form-field-invalid-background-position: bottom !default;
+
+$form-textarea-padding: 2px 3px !default;
+
+$form-label-font-weight: normal !default;
+$form-label-font-size: $font-size !default;
+$form-label-font-family: $font-family !default;
+$form-label-font: $form-label-font-weight $form-label-font-size $form-label-font-family !default;
+
+$form-checkbox-image: 'form/checkbox.gif' !default;
+$form-checkbox-size: 13px !default;
+
+$form-radio-image: 'form/radio.gif' !default;
+
+//icons
+$form-exclamation-icon: 'form/exclamation.gif' !default;
+
+//font
+$form-error-msg-color: #c0272b !default;
+$form-error-msg-font-weight: normal !default;
+$form-error-msg-font-size: ceil($font-size * .9) !default;
+$form-error-msg-font-family: $font-family !default;
+$form-error-msg-font: $form-error-msg-font-weight $form-error-msg-font-size $form-error-msg-font-family !default;
+$form-error-msg-line-height: 16px !default;
+
+$form-trigger-width: 17px !default;
+$form-trigger-height: $form-field-height !default;
+$form-toolbar-trigger-height: $form-toolbar-field-height !default;
+
+$form-trigger-border-bottom-width: 1px !default;
+$form-trigger-border-bottom-style: solid !default;
+$form-trigger-border-bottom-color: $form-field-border-color !default;
+$form-trigger-border-bottom: $form-trigger-border-bottom-width $form-trigger-border-bottom-style $form-trigger-border-bottom-color !default;
+
+$form-trigger-border-bottom-color-over: adjust-color($base-color, $hue: -4.322deg, $saturation: -1.065%, $lightness: -16.863%) !default;
+$form-trigger-border-bottom-color-focus: adjust-color($base-color, $hue: -4.322deg, $saturation: -1.065%, $lightness: -16.863%) !default;
+$form-trigger-border-bottom-color-focus-over: null !default;
+$form-trigger-border-bottom-color-pressed: null !default;
+
+$form-trigger-icon-background-position: 7px 6px !default;
+
+
+// * Fieldsets
+$fieldset-header-font-size: ceil($font-size * .9) !default;
+$fieldset-header-font-weight: bold !default;
+$fieldset-header-font-family: $font-family !default;
+$fieldset-header-line-height: 14px !default;
+$fieldset-header-font: #{$fieldset-header-font-size}/#{$fieldset-header-line-height} $fieldset-header-font-weight $fieldset-header-font-family !default;
+$fieldset-header-color: adjust-color($base-color, $hue: 3.785deg, $saturation: 18.194%, $lightness: -52.745%) !default;
+
+$fieldset-border-width: 1px !default;
+$fieldset-border-style: solid !default;
+$fieldset-border-color: $form-field-border-color !default;
+$fieldset-border: $fieldset-border-width $fieldset-border-style $fieldset-border-color !default;
+
+$fieldset-padding: 10px !default;
+$fieldset-header-padding: 0 3px 1px !default;
+*/
+
+/**
+ * Sliders
+$horizontal-slider-thumb-width: 14px !default;
+$horizontal-slider-thumb-height: 15px !default;
+
+$vertical-slider-thumb-width: 15px !default;
+$vertical-slider-thumb-height: 14px !default;
+*/
+
+/**
+// ===============================
+// ========= GRID BASE ===========
+// ===============================
+$grid-base-color: $base-color !default;
+
+// ===============================
+// ========= GRID HEADER =========
+// ===============================
+$grid-header-background-color: adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: -16.078%) !default;
+$grid-header-background-gradient: 'grid-header' !default;
+$grid-header-border-color: $neutral-color !default;
+$grid-header-over-border-color: adjust-color($base-color, $hue: -0.175deg, $saturation: 25.296%, $lightness: -2.549%) !default;
+$grid-header-over-background-color: $grid-header-over-border-color !default;
+$grid-header-over-background-gradient: 'grid-header-over' !default;
+$grid-header-background-color: $grid-base-color !default;
+$grid-header-line-height: 15px !default;
+$grid-header-padding: 3px 6px 4px !default;
+$grid-header-trigger-height: 22px !default;
+$grid-header-trigger-width: 14px !default;
+$grid-header-color: null !default;
+
+// ===============================
+// ========= GRID ROWS ===========
+// ===============================
+$grid-row-height: 20px !default;
+$grid-row-cell-color: null !default;
+$grid-row-cell-font-size: ceil($font-size * .9) !default;
+$grid-row-cell-line-height: $grid-row-cell-font-size + 4 !default;
+$grid-row-cell-font: normal #{$grid-row-cell-font-size}/#{$grid-row-cell-line-height} $font-family !default;
+//$grid-row-padding: 0 1px !default;
+
+//row wrap
+$grid-row-wrap-border-color: #ededed !default;
+$grid-row-wrap-border-width: 1px 0 !default;
+$grid-row-wrap-border-style: solid !default;
+
+//row body
+$grid-row-body-font: normal 11px/13px $font-family !default;
+$grid-row-body-padding: 4px !default;
+
+//row cell
+$grid-row-cell-background: #fff !default;
+$grid-row-cell-border-color: $grid-row-wrap-border-color !default;
+$grid-row-cell-border-style: solid !default;
+$grid-row-cell-border-width: 1px 0 !default;
+
+//row cell alt
+$grid-row-cell-alt-background: darken($grid-row-cell-background, 2) !default;
+
+//row cell over
+$grid-row-cell-over-border-color: adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: -6.667%) !default;
+$grid-row-cell-over-background-color: adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: 0.392%) !default;
+$grid-row-cell-over-background-gradient: 'grid-row-over' !default;
+
+//row cell selected
+$grid-row-cell-selected-border-style: dotted !default;
+$grid-row-cell-selected-border-color: adjust-color($base-color, $hue: 6.952deg, $saturation: 5.848%, $lightness: -6.471%) !default;
+$grid-row-cell-selected-background-color: adjust-color($base-color, $hue: 3.188deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+
+//row cell focus
+$grid-row-cell-focus-border-color: adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: -6.667%) !default;
+$grid-row-cell-focus-background-color: adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: 0.392%) !default;
+$grid-row-cell-focus-background-gradient: 'grid-row-over' !default;
+
+//standard cells
+$grid-cell-inner-padding-top: 2px !default;
+$grid-cell-inner-padding-horizontal: 6px !default;
+$grid-cell-inner-padding-bottom: 3px !default;
+
+//special cell
+$grid-cell-special-over-background-color: adjust-color($base-color, $hue: -0.476deg, $saturation: 25.214%, $lightness: 5.686%) !default;
+
+//cell with col lines
+$grid-cell-with-col-lines-border-color: adjust-color($base-color, $hue: 0deg, $saturation: -55.556%, $lightness: -2.549%) !default;
+
+// ===============================
+// ======== GROUPED GRID =========
+// ===============================
+$grid-grouped-header-background-color: #fff;
+$grid-grouped-header-border-width: 0 0 2px 0;
+$grid-grouped-header-border-style: solid;
+$grid-grouped-header-border-color: adjust-color($base-color, $hue: 0.844deg, $saturation: 7.644%, $lightness: -8.627%);
+$grid-grouped-header-padding: 6px 0 0 0;
+
+$grid-grouped-title-color: adjust-color($base-color, $hue: 0.952deg, $saturation: -6.718%, $lightness: -41.961%);
+$grid-grouped-title-font: bold ceil($font-size * .9) $font-family;
+$grid-grouped-title-padding: 4px 4px 4px 17px;
+
+// ===============================
+// ========= EDITOR ==========
+// ===============================
+$grid-editor-line-height: $grid-row-height - 5 !default;
+$grid-editor-font: normal #{$grid-row-cell-font-size}/#{$grid-editor-line-height} $font-family !default;
+
+// ===============================
+// ========= ROW EDITOR ==========
+// ===============================
+$grid-row-editor-background-color: adjust-color($base-color, $hue: 1deg, $saturation: 11%, $lightness: 11%) !default;
+$grid-row-editor-border-color: $panel-border-color !default;
+$grid-row-editor-border-width: 1px !default;
+$grid-row-editor-border: $grid-row-editor-border-width solid $grid-row-editor-border-color !important;
+$grid-row-editor-field-padding-horizontal: 2px !default;
+$grid-row-editor-cb-wrap-padding-top: 0 !default;
+$grid-row-editor-checkbox-margin-left: -4px !default;
+
+// ===============================
+// ========= CELL EDITOR =========
+// ===============================
+$grid-cell-editor-field-padding-horizontal: 4px !default;
+$grid-cell-editor-checkbox-padding-top: 3px !default;$html-editor-border-color: $form-field-border-color !default;
+$html-editor-background-color: $form-field-background-color !default;$border-layout-ct-background: adjust-color($base-color, $hue: 3.188deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+*/
+/**
+$accordion-header-color: #000 !default;
+$accordion-header-background-color: adjust-color($base-color, $saturation: 13%, $lightness: 7%) !default;
+$accordion-header-background-gradient: null !default;$loadmask-opacity: 0.5 !default;
+$loadmask-backgorund: #ccc !default;
+
+$loadmask-msg-padding: 2px !default;
+$loadmask-msg-border-color: $panel-header-border-color !default;
+$loadmask-msg-background-color: $panel-base-color !default;
+$loadmask-msg-background-gradient: null !default;
+
+$loadmask-msg-inner-padding: 5px 10px 5px 25px !default;
+$loadmask-msg-inner-icon: 'grid/loading.gif' !default;
+$loadmask-msg-inner-border-color: adjust-color($base-color, $hue: 1.111deg, $saturation: -14.017%, $lightness: -9.608%) !default;
+$loadmask-msg-inner-background-color: #eee !default;
+$loadmask-msg-inner-color: #222 !default;
+$loadmask-msg-inner-font-size: ceil($font-size * .9) !default; //11px
+$loadmask-msg-inner-font-weight: normal !default;
+$loadmask-msg-inner-font-family: $font-family !default;
+$loadmask-msg-inner-font: $loadmask-msg-inner-font-weight $loadmask-msg-inner-font-size $loadmask-msg-inner-font-family !default;//backgrounds
+$menu-background-color: #F0F0F0 !default;
+$menu-item-active-background-image: 'menu/menu-item-active-bg.gif';
+$menu-item-active-background-color: adjust-color($base-color, $saturation: 25.397%, $lightness: 7.647%) !default;
+
+//border
+$menu-item-active-border-color: adjust-color($base-color, $saturation: 23%, $lightness: -3%) !default;
+$menu-separator-border-color: #E0E0E0 !default;
+$menu-separator-background-color: #FFF !default;
+
+//sizes
+$menu-item-indent: 27px !default;
+$menu-padding: 2px !default;
+$menu-link-padding: 6px 2px 3px 32px !default;
+
+//text
+$menu-text-color: #222 !default;
+
+//icons
+$menu-icon-arrow: 'menu/menu-parent.gif';
+$menu-icon-checked: 'menu/checked.gif';
+$menu-icon-group-checked: 'menu/group-checked.gif';
+$menu-icon-unchecked: 'menu/unchecked.gif';// TODO: Change value to $include-default-uis !default;
+$include-panel-uis: true;
+
+// ===============================
+// ========= BASE PANEL ==========
+// ===============================
+$panel-border-radius: null !default;
+$panel-border-width: 1px !default;
+$panel-base-color: adjust-color($base-color, $hue: 0deg, $saturation: 0.542%, $lightness: 7.843%) !default; //#DFE8F6
+$panel-border-color: adjust-color($base-color, $hue: 0deg, $saturation: 7.644%, $lightness: -8.627%) !default;
+
+// ===============================
+// ========= PANEL BODY ==========
+// ===============================
+$panel-body-border-style: solid !default;
+$panel-body-background-color: #fff !default;
+$panel-body-color: #000 !default;
+$panel-body-border-color: $panel-border-color !default;
+$panel-body-font-size: 12px !default;
+
+// ===============================
+// ======== PANEL TOOLS ==========
+// ===============================
+$tool-size: 15px !default;
+
+// ===============================
+// ======== PANEL HEADER =========
+// ===============================
+$panel-header-border-width: 1px !default;
+$panel-header-border-style: solid !default;
+$panel-header-inner-border: true !default;
+$panel-header-inner-border-width: 1px 0 0 !default;
+
+//padding
+$panel-header-padding: 3px 5px 4px !default;
+$panel-header-vertical-padding: 5px 4px !default;
+
+//fonts
+$panel-header-font-size: ceil($font-size * .9) !default; //11px
+$panel-header-line-height: 17px !default;
+$panel-header-font-weight: bold !default;
+$panel-header-font-family: $font-family !default;
+
+//icon
+$panel-header-icon-width: 16px !default;
+$panel-header-icon-height: 16px !default;
+
+//background
+$panel-header-background-gradient: 'panel-header' !default;
+
+// UI defaults
+$panel-header-border-color: $panel-border-color !default;
+$panel-header-inner-border-color: adjust-color($panel-base-color, $hue: 0deg, $saturation: -6.098%, $lightness: 4.902%) !default;
+$panel-header-color: adjust-color($panel-base-color, $hue: 0deg, $saturation: 38.347%, $lightness: -63.725%) !default;
+$panel-header-background-color: adjust-color($panel-base-color, $hue: 0deg, $saturation: 6.402%, $lightness: -4.51%) !default;
+
+// ===============================
+// ======== FRAMED PANEL =========
+// ===============================
+$frame-base-color: $panel-base-color !default;
+
+//border
+$panel-frame-border-radius: 4px !default;
+$panel-frame-border-width: 1px !default;
+$panel-frame-border-style: solid !default;
+$panel-frame-padding: 4px !default;
+
+// UI defaults
+$panel-frame-background-color: $frame-base-color !default;
+$panel-frame-border-color: $panel-border-color !default;
+// color picker
+$colorpicker-item-border-color: #aca899 !default;
+$colorpicker-over-border-color: #8bb8f3 !default;
+$colorpicker-over-background-color: #deecfd !default;
+
+// date picker
+$datepicker-base-color: $base-color !default;
+
+$datepicker-border-color: adjust-color($datepicker-base-color, $hue: 5.926deg, $saturation: 4.444%, $lightness: -57.647%) !default; //#1b376c
+$datepicker-border-width: 1px !default;
+$datepicker-border-style: solid !default;
+$datepicker-border: $datepicker-border-width $datepicker-border-style $datepicker-border-color !default;
+$datepicker-background-color: #ffffff !default;
+
+$datepicker-next-image: 'shared/right-btn.gif' !default;
+$datepicker-prev-image: 'shared/left-btn.gif' !default;
+$datepicker-month-arrow-image: 'button/s-arrow-light.gif' !default;
+$datepicker-tool-sprite-image: 'tools/tool-sprites.gif' !default;
+
+$datepicker-header-background-color: adjust-color($datepicker-base-color, $hue: 5.768deg, $saturation: 0.419%, $lightness: -52.941%) !default; //#23427c
+$datepicker-header-background-gradient: matte !default;
+
+$datepicker-monthpicker-color: #fff !default;
+
+$datepicker-th-color: adjust-color($datepicker-base-color, $hue: 5.586deg, $saturation: -4.167%, $lightness: -55.882%) !default; //#233d6d
+$datepicker-th-font-family: $font-family !default;
+$datepicker-th-font-size: 10px !default;
+$datepicker-th-font-weight: normal !default;
+$datepicker-th-font: $datepicker-th-font-weight $datepicker-th-font-size $font-family !default;
+$datepicker-th-background-color: adjust-color($datepicker-base-color, $hue: -1.19deg, $saturation: 22.222%, $lightness: 8.824%) !default; //#dfecfb
+$datepicker-th-background-gradient: matte !default;
+$datepicker-th-border-bottom-color: darken($datepicker-th-background-color, 10) !default;
+$datepicker-th-text-align: right !default;
+
+$datepicker-td-height: 17px !default;
+
+//item
+$datepicker-item-color: #000 !default;
+$datepicker-item-border-width: 1px !default;
+$datepicker-item-border-style: solid !default;
+$datepicker-item-border-color: #fff !default;
+$datepicker-item-border: $datepicker-item-border-width $datepicker-item-border-style $datepicker-item-border-color !default;
+
+$datepicker-item-hover-background-color: adjust-color($datepicker-base-color, $hue: -0.606deg, $saturation: 38.73%, $lightness: 9.02%) !default; //#ddecfe
+
+$datepicker-today-item-border-color: darkred !default;
+
+$datepicker-selected-item-border-width: 1px !default;
+$datepicker-selected-item-border-style: solid !default;
+$datepicker-selected-item-border-color: adjust-color($datepicker-base-color, $hue: 0.853deg, $saturation: 5.008%, $lightness: -11.961%) !default; //#8db2e3
+$datepicker-selected-item-border: $datepicker-selected-item-border-width $datepicker-selected-item-border-style $datepicker-selected-item-border-color !default;
+$datepicker-selected-item-background-color: adjust-color($datepicker-base-color, $hue: 0.267deg, $saturation: -4.535%, $lightness: 6.275%) !default;
+
+$datepicker-footer-background-color: $datepicker-th-background-color !default;
+$datepicker-footer-background-gradient: color_stops(adjust-color($datepicker-base-color, $hue: 0.58deg, $saturation: -2.067%, $lightness: 7.451%), adjust-color($datepicker-base-color, $hue: -0.43deg, $saturation: -4.736%, $lightness: 3.922%) 49%, adjust-color($datepicker-base-color, $hue: -0.175deg, $saturation: -4.204%, $lightness: 1.373%) 51%, adjust-color($datepicker-base-color, $hue: 0.952deg, $saturation: -4.831%, $lightness: 2.353%)) !default;
+$datepicker-footer-border-top-color: $datepicker-th-border-bottom-color !default; //a3bad9
+
+$datepicker-monthpicker-height: 167px !default;
+
+$datepicker-monthpicker-item-color: adjust-color($datepicker-base-color, $hue: 3.785deg, $saturation: 18.194%, $lightness: -52.745%) !default; //#15428B
+$datepicker-monthpicker-item-border: $datepicker-item-border !default;
+
+$datepicker-monthpicker-item-hover-background-color: $datepicker-item-hover-background-color !default;
+
+$datepicker-monthpicker-item-selected-background-color: $datepicker-footer-background-color !default;
+$datepicker-monthpicker-item-selected-border: $datepicker-selected-item-border !default;
+$progress-bar-base-color: $base-color !default;
+
+$progress-height: 20px !default;
+
+//borders
+$progress-border-color: adjust-color($progress-bar-base-color, $hue: 0deg, $saturation: -3.08%, $lightness: -23.725%) !default;
+$progress-border-width: 1px !default;
+$progress-border-radius: 0 !default;
+
+//backgrounds
+$progress-background-color: adjust-color($progress-bar-base-color, $hue: 0deg, $saturation: -11.37%, $lightness: 7.451%) !default;
+
+//bar
+$progress-bar-background-color: adjust-color($progress-bar-base-color, $hue: 0deg, $saturation: 8.187%, $lightness: -17.647%) !default;
+
+//text
+$progress-text-color-front: #fff !default;
+$progress-text-color-back: adjust-color($progress-bar-base-color, $hue: 0deg, $saturation: -10.895%, $lightness: -43.725%) !default;
+$progress-text-text-align: center !default;
+$progress-text-font-size: ceil($font-size * .9) !default;
+$progress-text-font-weight: bold !default;$tip-base-color: adjust-color($base-color, $hue: 2.121deg, $saturation: 44.444%, $lightness: 11.569%) !default;
+
+//background
+$tip-background-color: $tip-base-color !default;
+$tip-background-gradient: null !default;
+
+//text
+$tip-body-color      : adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: -66.667%) !default;
+$tip-body-font-size  : ceil($font-size * .9) !default;
+$tip-body-font-weight: normal !default;
+$tip-body-padding: 3px !default;
+$tip-body-link-color: darken($tip-body-color, 10%) !default;
+
+$tip-header-color      : $tip-body-color !default;
+$tip-header-font-size  : $tip-body-font-size !default;
+$tip-header-font-weight: bold !default;
+$tip-header-padding    : 3px 3px 0 !default;  
+
+//borders
+$tip-border-color: adjust-color($tip-base-color, $hue: -1.705deg, $saturation: -60.494%, $lightness: -27.451%) !default;
+$tip-border-width: 1px !default;
+$tip-border-radius: 3px !default;
+
+//error tips
+$tip-error-inner-border-color: #d87166 !default;
+$tip-error-border-color: #a1311f !default;
+$tip-error-border-radius: 5px !default;
+$tip-error-border-width: 1px !default;
+$tip-error-background-color: #fff !default;
+//color
+$tabbar-base-color: adjust-color($panel-base-color, $hue: 0deg, $saturation: -3.156%, $lightness: -5.294%) !default;
+$tabbar-background-gradient: 'tabbar' !default;
+
+//background
+$tab-base-color: adjust-color($base-color, $hue: 0deg, $saturation: 33.016%, $lightness: 9.02%) !default; //#deecfd
+$tab-base-color-over: adjust-color($tab-base-color, $hue: 0deg, $saturation: 11.429%, $lightness: 2.353%) !default;
+$tab-base-color-active: $tab-base-color !default;
+$tab-base-color-disabled: adjust-color($base-color, $hue: 0deg, $saturation: 15.873%, $lightness: 9.02%) !default; //E1ECFA
+
+$tab-background: $tab-base-color !default;
+$tab-background-over: $tab-base-color-over !default;
+$tab-background-active: $tab-base-color-active !default;
+$tab-background-disabled: $tab-base-color-disabled !default;
+
+$tab-color: adjust-color($tab-base-color, $hue: 0deg, $saturation: -45.589%, $lightness: -48.431%) !default;
+$tab-color-over: $tab-color !default;
+$tab-color-active: adjust-color($tab-color, $hue: 0deg, $saturation: 30.768%, $lightness: -13.333%) !default;
+$tab-color-disabled: #c3b3b3 !default;
+
+$tab-font-size: ceil($font-size * .9) !default; //11px
+$tab-font-size-over: $tab-font-size !default;
+$tab-font-size-active: $tab-font-size !default;
+$tab-font-size-disabled: $tab-font-size !default;
+
+$tab-font-family: $font-family;
+$tab-font-family-over: $tab-font-family;
+$tab-font-family-active: $tab-font-family;
+$tab-font-family-disabled: $tab-font-family;
+
+$tab-font-weight: bold !default;
+$tab-font-weight-over: $tab-font-weight !default;
+$tab-font-weight-active: $tab-font-weight !default;
+$tab-font-weight-disabled: $tab-font-weight !default;
+
+$tab-background-gradient: 'tab' !default;
+$tab-background-gradient-over: 'tab-over' !default;
+$tab-background-gradient-active: 'tab-active' !default;
+$tab-background-gradient-disabled: 'tab-disabled' !default;
+
+//borders
+$tab-inner-border: true !default;
+
+$tab-top-border-radius: 4px 4px 0 0 !default;
+$tab-top-border-width: 1px 1px 0 1px !default;
+$tab-top-inner-border-width: 1px 1px 0 !default;
+
+$tab-bottom-border-radius: 0 0 4px 4px !default;
+$tab-bottom-border-width: 0 1px 1px 1px !default;
+$tab-bottom-inner-border-width: 0 1px 1px 1px !default;
+
+$tab-border-color: adjust-color($tab-base-color, $hue:0deg, $saturation: -28.008%, $lightness: -20.98%) !default;
+$tab-border-color-over: $tab-border-color !default;
+$tab-border-color-active: $tab-border-color !default;
+$tab-border-color-disabled: adjust-color($base-color, $hue:0deg, $saturation: 6.349%, $lightness: -0.588%) !default;
+
+$tab-inner-border-color: adjust-color($tab-base-color, $hue: 0deg, $saturation: -8.571%, $lightness: 8.941%) !default;
+
+$tabbar-border-color: $panel-header-border-color !default;
+
+//size
+$tab-height: 20px !default;
+$tab-spacing: 2px !default;
+
+//tab bar body border and padding
+$tabbar-top-body-border-width: 1px 1px 0 !default;
+$tabbar-top-body-padding: 1px 0 3px !default;
+$tabbar-top-plain-body-border-width: 0 !default;
+$tabbar-top-plain-body-padding: 0 0 2px !default;
+$tabbar-bottom-body-border-width: 0 1px 1px !default;
+$tabbar-bottom-body-padding: 3px 0 1px !default;
+$tabbar-bottom-plain-body-border-width: 0 !default;
+$tabbar-bottom-plain-body-padding: 3px 0 0 !default;
+
+//closable tab
+$tab-closable-icon: 'tab/tab-default-close.gif' !default;
+$tab-closable-icon-width: 11px !default;
+$tab-closable-icon-height: 11px !default;
+$tab-closable-icon-top: 2px !default;
+$tab-closable-icon-right: 2px !default;
+$nbr-tab-closable-icon-top: 0px !default;
+$nbr-tab-closable-icon-right: 0px !default;
+
+//tab bar strip
+$tabbar-strip-height: 3px !default;
+$tabbar-strip-border-color: $panel-header-border-color !default;
+$tabbar-strip-background-color: $tab-base-color !default;
+$tabbar-top-strip-border-width: 1px 1px 0 !default;
+$tabbar-bottom-strip-border-width: 0 1px 1px !default;$toolbar-font-size: ceil($font-size * .9) !default;
+
+$toolbar-background-color: adjust-color($base-color, $hue: -1.333deg, $saturation: -3.831%, $lightness: 4.51%) !default;
+$toolbar-background-gradient: color_stops(lighten($toolbar-background-color, 3), $toolbar-background-color) !default;
+$toolbar-inner-border-width: 1px 0px 0px !default;
+$toolbar-inner-border-color: lighten($toolbar-background-color, 5%) !default;
+
+//margins
+$toolbar-horizontal-spacing: 2px;
+$toolbar-vertical-spacing: 2px;
+$toolbar-footer-horizontal-spacing: 6px;
+$toolbar-footer-vertical-spacing: 2px;
+
+//border
+$toolbar-border-color: $panel-body-border-color !default;
+
+//spacer
+$toolbar-spacer-width: 2px !default;
+
+//separator
+$toolbar-separator-color: adjust-color($base-color, $hue: -1deg, $saturation: 100%, $lightness: -4.3%) !default;
+$toolbar-separator-highlight-color: #fff !default;
+
+//text
+$toolbar-text-font-family: $font-family;
+$toolbar-text-font-size: ceil($font-size * .9) !default; //11px
+$toolbar-text-font-weight: normal !default;
+$toolbar-text-color: mix($mix-color, #000, 30) !default;
+$toolbar-text-padding: 3px 4px 0 4px !default;
+$toolbar-text-line-height: 16px !default;$tree-elbow-height: 20px !default;
+$tree-elbow-width: 16px !default;
+$tree-checkbox-margin-top: 4px !default;
+$tree-checkbox-margin-right: 3px !default;
+$tree-icon-margin-top: 2px !default;
+$tree-icon-margin-right: 3px !default;
+$grid-cell-treecolumn-editor-field-padding-horizontal: 1px !default;$window-base-color: $base-color !default;
+
+$window-border-radius: 5px 5px !default;
+$window-border-width: 1px !default;
+$window-border-color: adjust-color($window-base-color, $hue: 0.952deg, $saturation: -32.377%, $lightness: -13.725%) !default;
+$window-inner-border-width: 1px !default;
+$window-inner-border-color: adjust-color($window-base-color, $hue: 2.667deg, $saturation: 9.662%, $lightness: 11.373%) !default;
+$window-background-color: adjust-color($window-base-color, $hue: 0.267deg, $saturation: -21.309%, $lightness: 1.569%) !default;
+
+$window-body-border-width: 1px !default;
+$window-body-border-style: solid !default;
+$window-body-border-color: adjust-color($window-base-color, $hue: 0.844deg, $saturation: 7.644%, $lightness: -8.627%) !default;
+$window-body-background-color: adjust-color($window-base-color, $hue: 3.188deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+$window-body-color: #000 !default;
+
+$window-header-padding: 5px 5px 0 !default;
+$window-header-font-size: ceil($font-size * .9) !default; //11px
+$window-header-line-height: 17px !default;
+$window-header-color: adjust-color($window-base-color, $hue: -2.451deg, $saturation: 38.889%, $lightness: -55.882%) !default;
+$window-header-font-weight: bold !default;
+*/
