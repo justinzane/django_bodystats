@@ -19,6 +19,8 @@ urlpatterns = patterns('',
     # Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    # Allauth
+    # (r'^accounts/', include('allauth.urls')),
     # Main App Page
     (r'^index[html.].*$', 'BodyStats.views.index'),
     (r'^current_user\.json$', 'BodyStats.views.current_user'),

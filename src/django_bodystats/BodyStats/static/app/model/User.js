@@ -5,15 +5,28 @@ Ext.define('BodyStats.model.User', {
 		name : 'id',
 		type : 'int'
 	}, {
-		name : 'user',
+		name : 'username',
 		type : 'string'
 	}, {
-		name : 'firstname',
+		name : 'firstName',
 		type : 'string'
 	}, {
-		name : 'lastname',
+		name : 'lastName',
 		type : 'string'
+	}, {
+		name : 'email',
+		type : 'string'
+	}, {
+		name : 'lastLogin',
+		type : 'date'
+	}, {
+		name : 'dateJoined',
+		type : 'date'
 	}],
+	hasMany: [
+		'BodyStats.model.Weight',
+		'BodyStats.model.BloodPressure'
+	],
 	proxy: {
 		type: 'ajax',
 		url: '/api/v1/user/',

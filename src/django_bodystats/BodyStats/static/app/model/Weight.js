@@ -11,6 +11,7 @@ Ext.define('BodyStats.model.Weight', {
 		name : 'weight',
 		type : 'float'
 	}],
+	belongsTo: 'BodyStats.model.User',
 	proxy: {
 		type: 'ajax',
 		url: '/api/v1/weight/',

@@ -16,8 +16,13 @@ Ext.application({
 		'BodyStats.model.Weight', 
 		'BodyStats.model.BloodPressure'
 	],
-	stores : ['BodyStats.store.CurrentUser', 'BodyStats.store.Weight', 'BodyStats.store.BloodPressure'],
+	stores : [
+		'BodyStats.store.CurrentUser', 
+		'BodyStats.store.Weight', 
+		'BodyStats.store.BloodPressure'
+	],
 	controllers : [
+		'BodyStats.controller.Main',
 		'BodyStats.controller.Header', 
 		'BodyStats.controller.UserAction',
 		'BodyStats.controller.Weight', 
@@ -25,7 +30,9 @@ Ext.application({
 	],
 	launch : function() {
 		console.log('Starting app.launch');
-		Ext.create('Ext.container.Viewport', {
+		var mainController = Ext.create('BodyStats.controller.Main');
+		console.log(mainController);
+		var vp = Ext.create('Ext.container.Viewport', {
 			alias : 'viewport',
 			layout: 'border',
 			padding: '2%',
@@ -36,41 +43,18 @@ Ext.application({
 				xtype : 'panel',
 				region: 'center',
 				layout : 'accordion',
-				items : [{
-					xtype: 'panel',
-					title: 'User Actions',
-					layout: 'accordion',
-					items: [{
-						xtype: 'loginpanel'
-					}, {
-						xtype: 'logoutpanel'
-					}, {
-						xtype: 'registrationpanel'
-					}]
-				}, {
-					xtype : 'weightentrypanel'
-				}, {
-					xtype : 'panel',
-					title : 'Weight Chart',
-					layout : 'fit',
-					items : [{
-						xtype : 'weightchart'
-					}]
-				}, {
-					xtype : 'bloodpressureentrypanel'
-				}, {
-					xtype : 'panel',
-					title : 'Blood Pressure Chart',
-					layout : 'fit',
-					items : [{
-						xtype : 'bloodpressurechart'
-					}]
-				}]
+				alias: 'widget.contentpanel',
+				id: 'contentpanel'
 			}, {
 				xtype: 'panel',
 				region: 'south',
 				html: '&copy 2012, Justin Chudgar'
 			}]
 		});
+		if (Ext.getStore('currentUserStore').first().getData().id < 1) {
+			mainController.showLogin();
+		} else {
+			mainController.showContent();
+		}; //if-else
 	}
 });

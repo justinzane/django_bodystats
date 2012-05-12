@@ -13,6 +13,7 @@ Ext.define('BodyStats.model.BloodPressure', {
 		name : 'diastolic',
 		type : 'float'
 	}],
+	belongsTo: 'BodyStats.model.User',
 	proxy: {
 		type: 'ajax',
 		url: '/api/v1/bloodpressure/',

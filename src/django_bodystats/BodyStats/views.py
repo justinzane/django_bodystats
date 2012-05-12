@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.contrib.auth import get_user, authenticate, login, logout
+from django.contrib.auth.models import AnonymousUser
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -11,8 +12,12 @@ def index(request):
 
 def current_user(request):
     cu = get_user(request)
-    cus = json.dumps({'id': cu.pk,
-                      'username': cu.username})
+    if cu.is_authenticated():
+        cus = json.dumps({'id': cu.pk,
+                          'username': cu.username})
+    else:
+        cus = json.dumps({'id': 0,
+                          'username': cu.username})
     return(HttpResponse(cus, content_type='application/json'))
 
 def logout_user(request):

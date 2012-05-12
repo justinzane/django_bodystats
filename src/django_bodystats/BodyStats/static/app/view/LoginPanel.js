@@ -30,8 +30,7 @@ Ext.define('BodyStats.view.LoginPanel', {
 				    	password: vals['password']
 				    },
 				    success: function(response){
-				        var text = response.responseText;
-				        console.log(text);
+				        //
 				    }
 				});
             }
