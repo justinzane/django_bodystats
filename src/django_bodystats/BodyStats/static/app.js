@@ -11,6 +11,7 @@ Ext.application({
 	name : 'BodyStats',
 	appFolder : 'static/app',
 	id: 'bodystats',
+	requires: ['Ext.util.Cookies'],
 	models : [
 		'BodyStats.model.CurrentUser', 
 		'BodyStats.model.Weight', 

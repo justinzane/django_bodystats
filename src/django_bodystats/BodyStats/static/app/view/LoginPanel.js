@@ -25,12 +25,15 @@ Ext.define('BodyStats.view.LoginPanel', {
                 var vals = form.getValues();
                 Ext.Ajax.request({
 				    url: '/login',
+				    defaultHeaders: {
+				    	"X-CSRFToken": Ext.util.Cookies.get('csrftoken')
+				    },
 				    params: {
 				    	username: vals['username'],
 				    	password: vals['password']
 				    },
 				    success: function(response){
-				        //
+				        // reset #contentpanel contents
 				    }
 				});
             }

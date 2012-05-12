@@ -1,9 +1,10 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.contrib.auth import get_user, authenticate, login, logout
-from django.contrib.auth.models import AnonymousUser
+from django.contrib.auth.models import AnonymousUser, User
 from django.views.decorators.csrf import csrf_exempt
 import json
+from models import UserProfile
 
 def index(request):
     tmpl = loader.get_template('index.html')
@@ -39,4 +40,22 @@ def login_user(request):
         return(HttpResponse('Invalid username or password.', status=400, content_type='application/json'))
 
 def register_user(request):
-    pass
+    req_user = request.POST['username']
+    req_pass = request.POST['password']
+    req_first = request.POST['firstname']
+    req_last = request.POST['lastname']
+    req_email = request.POST['email']
+    req_sex = request.POST['sex']
+    req_height = int(request.POST['height'])
+
+    user = User.objects.create_user(username=req_user,
+                                    email=req_email,
+                                    password=req_pass)
+    user.first_name = req_first
+    user.last_name = req_last
+    user.save()
+    
+    prof = UserProfile.objects.create(user=user, sex=req_sex, height=req_height)
+    prof.save()
+    
+    return(HttpResponse('', content_type='application/json'))

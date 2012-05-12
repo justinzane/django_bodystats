@@ -667,3 +667,484 @@ Traceback (most recent call last):
   File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 14, in current_user
     cus = json.dumps({'id': cu.pk,
 AttributeError: 'AnonymousUser' object has no attribute 'pk'
+Not Found: /register
+Forbidden (CSRF token missing or incorrect.): /register
+Forbidden (CSRF token missing or incorrect.): /register
+Forbidden (CSRF token missing or incorrect.): /register
+Forbidden (CSRF token missing or incorrect.): /register
+Forbidden (CSRF token missing or incorrect.): /register
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 27, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 27, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 27, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: column username is not unique
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: column username is not unique
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 27, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /admin/BodyStats/weight/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 136, in get_response
+    response = response.render()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/response.py", line 104, in render
+    self._set_content(self.rendered_content)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/response.py", line 81, in rendered_content
+    content = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1178, in render
+    _dict = func(*resolved_args, **resolved_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 278, in result_list
+    'results': list(results(cl))}
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 256, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 248, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 176, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/util.py", line 246, in lookup_field
+    value = attr()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 380, in __str__
+    return force_unicode(self).encode('utf-8')
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/encoding.py", line 71, in force_unicode
+    s = unicode(s)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 21, in __unicode__
+    (self.user, self.timestamp, self.weight))
+TypeError: an integer is required
+Internal Server Error: /admin/BodyStats/weight/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 136, in get_response
+    response = response.render()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/response.py", line 104, in render
+    self._set_content(self.rendered_content)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/response.py", line 81, in rendered_content
+    content = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1178, in render
+    _dict = func(*resolved_args, **resolved_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 278, in result_list
+    'results': list(results(cl))}
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 256, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 248, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 176, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/util.py", line 246, in lookup_field
+    value = attr()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 380, in __str__
+    return force_unicode(self).encode('utf-8')
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/encoding.py", line 71, in force_unicode
+    s = unicode(s)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 21, in __unicode__
+    (str(self.user), self.timestamp, self.weight))
+TypeError: an integer is required
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 35, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 35, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 35, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: column username is not unique
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 52, in register_user
+    password=req_pass)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 160, in create_user
+    user.save(using=self._db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 565, in save_base
+    created=(not record_exists), raw=raw, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/dispatch/dispatcher.py", line 172, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/models.py", line 35, in create_user_profile
+    UserProfile.objects.create(user=instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1576, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 910, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: BodyStats_userprofile.height may not be NULL

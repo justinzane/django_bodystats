@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from tastypie.api import Api
 from BodyStats.api import *
-from BodyStats.views import index, current_user, login_user, logout_user
+from BodyStats.views import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
@@ -26,5 +26,6 @@ urlpatterns = patterns('',
     (r'^current_user\.json$', 'BodyStats.views.current_user'),
     (r'^login.*$', 'BodyStats.views.login_user'),
     (r'^logout.*$', 'BodyStats.views.logout_user'),
+    (r'^register.*$', 'BodyStats.views.register_user'),
 )
 urlpatterns += staticfiles_urlpatterns()

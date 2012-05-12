@@ -54,5 +54,3 @@ Ext.define('BodyStats.controller.Main', {
 		}]);
 	}
 });
-Ext.create('BodyStats.controller.Main');
-
