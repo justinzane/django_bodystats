@@ -1148,3 +1148,5 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 337, in execute
     return Database.Cursor.execute(self, query, params)
 IntegrityError: BodyStats_userprofile.height may not be NULL
+Forbidden (CSRF token missing or incorrect.): /current_user.json
+Forbidden (CSRF token missing or incorrect.): /current_user.json

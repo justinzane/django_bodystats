@@ -1,3 +1,4 @@
+Ext.require('Ext.util.Cookies');
 Ext.define('BodyStats.store.BloodPressure', {
 	extend: 'Ext.data.JsonStore',
 	model: 'BodyStats.model.BloodPressure',
@@ -14,7 +15,8 @@ Ext.create('BodyStats.store.BloodPressure', {
 		noCache: false,
 		headers: {
 			'accept':'application/json',
-			'content-type':'application/json'
+			'content-type':'application/json',
+			"X-CSRFToken": Ext.util.Cookies.get('csrftoken')
 			},
 		pageParam: null,
 		limitParam: null,

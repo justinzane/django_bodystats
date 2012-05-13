@@ -3,6 +3,8 @@ Ext.define('BodyStats.view.LoginPanel', {
 	alias: 'widget.loginpanel',
 	title: 'Login',
 	layout: 'anchor',
+	autoRender: true,
+	autoScroll: true,
 	items: [{
 		xtype: 'textfield',
 		fieldLabel: 'Username',
@@ -32,9 +34,10 @@ Ext.define('BodyStats.view.LoginPanel', {
 				    	username: vals['username'],
 				    	password: vals['password']
 				    },
-				    success: function(response){
-				        // reset #contentpanel contents
-				    }
+				    success: Ext.Function.defer(BodyStats.util.Util.checkLogin, 1500),
+				    failure: function(){
+				    	Ext.MessageBox.alert("Login failed.", "Try again or Register an account.");
+				    }				    
 				});
             }
 		}

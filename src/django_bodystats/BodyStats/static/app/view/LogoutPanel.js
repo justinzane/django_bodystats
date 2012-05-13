@@ -11,12 +11,12 @@ Ext.define('BodyStats.view.LogoutPanel', {
 			Ext.Ajax.request({
 			    url: '/logout.json',
 			    params: null,
-			    success: function(response){
-			        var text = response.responseText;
-			        console.log(text);
-			    }
+			    success: Ext.Function.defer(BodyStats.util.Util.checkLogin, 1500),
+				failure: function(){
+					Ext.MessageBox.alert("Logout failed.", "Check network connection.")
+				}
 			});
-		}
+		}, //end handler
 	}],
 	initComponent : function() {
 		this.callParent(arguments);

@@ -1,3 +1,4 @@
+Ext.require('Ext.util.Cookies');
 Ext.define('BodyStats.store.Weight', {
 	extend: 'Ext.data.JsonStore',
 	model: 'BodyStats.model.Weight',
@@ -14,7 +15,8 @@ Ext.create('BodyStats.store.Weight', {
 		noCache: false,
 		headers: {
 			'accept':'application/json',
-			'content-type':'application/json'
+			'content-type':'application/json',
+			"X-CSRFToken": Ext.util.Cookies.get('csrftoken')
 			},
 		pageParam: null,
 		limitParam: null,

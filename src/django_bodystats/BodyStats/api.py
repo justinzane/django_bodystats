@@ -22,7 +22,7 @@ django_bodystats
 '''
 from tastypie.resources import ModelResource
 from tastypie.authorization import DjangoAuthorization
-from tastypie.authentication import ApiKeyAuthentication, DigestAuthentication, OAuthAuthentication
+from tastypie.authentication import BasicAuthentication
 from tastypie import fields
 from django.contrib.auth.models import User
 from models import BloodPressure, UserProfile, Weight
@@ -32,14 +32,14 @@ class UserResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
         fields = ['id', 'username', 'first_name', 'last_name', 'last_login', 'date_joined']
-        authentication = ApiKeyAuthentication()
+        authentication = BasicAuthentication()
         authorization = DjangoAuthorization()
 
 class UserProfileResource(ModelResource):
     user = fields.OneToOneField(UserResource, 'user')
     class Meta:
         queryset = UserProfile.objects.all()
-        authentication = ApiKeyAuthentication()
+        authentication = BasicAuthentication()
         authorization = DjangoAuthorization()
         
     def obj_create(self, bundle, request=None, **kwargs):
@@ -53,7 +53,7 @@ class WeightResource(ModelResource):
     class Meta:
         queryset = Weight.objects.all()
         fields = ['user', 'timestamp', 'weight']
-        authentication = ApiKeyAuthentication()
+        authentication = BasicAuthentication()
         authorization = DjangoAuthorization()
         
     def obj_create(self, bundle, request=None, **kwargs):
@@ -67,7 +67,7 @@ class BloodPressureResource(ModelResource):
     class Meta:
         queryset = BloodPressure.objects.all()
         fields = ['user', 'timestamp', 'systolic', 'diastolic']
-        authentication = ApiKeyAuthentication()
+        authentication = BasicAuthentication()
         authorization = DjangoAuthorization()
 
     def obj_create(self, bundle, request=None, **kwargs):

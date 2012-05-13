@@ -11,7 +11,10 @@ Ext.application({
 	name : 'BodyStats',
 	appFolder : 'static/app',
 	id: 'bodystats',
-	requires: ['Ext.util.Cookies'],
+	requires: [
+		'Ext.util.Cookies',
+		'BodyStats.util.Util'
+	],
 	models : [
 		'BodyStats.model.CurrentUser', 
 		'BodyStats.model.Weight', 
@@ -23,7 +26,6 @@ Ext.application({
 		'BodyStats.store.BloodPressure'
 	],
 	controllers : [
-		'BodyStats.controller.Main',
 		'BodyStats.controller.Header', 
 		'BodyStats.controller.UserAction',
 		'BodyStats.controller.Weight', 
@@ -31,8 +33,6 @@ Ext.application({
 	],
 	launch : function() {
 		console.log('Starting app.launch');
-		var mainController = Ext.create('BodyStats.controller.Main');
-		console.log(mainController);
 		var vp = Ext.create('Ext.container.Viewport', {
 			alias : 'viewport',
 			layout: 'border',
@@ -44,6 +44,7 @@ Ext.application({
 				xtype : 'panel',
 				region: 'center',
 				layout : 'accordion',
+				maxWidth: '960px',
 				alias: 'widget.contentpanel',
 				id: 'contentpanel'
 			}, {
@@ -52,10 +53,7 @@ Ext.application({
 				html: '&copy 2012, Justin Chudgar'
 			}]
 		});
-		if (Ext.getStore('currentUserStore').first().getData().id < 1) {
-			mainController.showLogin();
-		} else {
-			mainController.showContent();
-		}; //if-else
+		BodyStats.util.Util.createContent();
+		BodyStats.util.Util.checkLogin();
 	}
 });
