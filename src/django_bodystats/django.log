@@ -1150,3 +1150,12 @@ Traceback (most recent call last):
 IntegrityError: BodyStats_userprofile.height may not be NULL
 Forbidden (CSRF token missing or incorrect.): /current_user.json
 Forbidden (CSRF token missing or incorrect.): /current_user.json
+Internal Server Error: /register
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/justin/src/django_bodystats/src/django_bodystats/BodyStats/views.py", line 58, in register_user
+    login(request, user)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/__init__.py", line 73, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+AttributeError: 'User' object has no attribute 'backend'

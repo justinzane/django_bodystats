@@ -35,7 +35,6 @@ Ext.define('BodyStats.view.RegistrationPanel', {
 		allowBlank: false,
 		validator: function(val) {
 			pw1 = this.up('form').getForm().getValues()['password']
-			console.log(["PW1 ", pw1, " PW2 ", val]);
 			return val == pw1;
 		}
 	}, {
@@ -78,11 +77,9 @@ Ext.define('BodyStats.view.RegistrationPanel', {
 		text: 'Register',
 		alias: 'widget.registerbutton',
 		handler: function(){
-			console.log('registerbutton pushed.')
 			var form = this.up('form').getForm();
             if (form.isValid()) {
                 var vals = form.getValues();
-                console.log(vals);
                 Ext.Ajax.defaultHeaders = {
 			    	"X-CSRFToken": Ext.util.Cookies.get('csrftoken')
 			    };
@@ -97,9 +94,10 @@ Ext.define('BodyStats.view.RegistrationPanel', {
 				    	sex: vals['sex'],
 				    	height: 12*parseInt(vals['heightfeet']) + parseFloat(vals['heightinches'])
 				    },
-				    success: function(response){
-				        // reset #contentpanel contents
-				    }
+				    success: Ext.Function.defer(BodyStats.util.Util.checkLogin, 1500),
+				    failure: function(){
+				    	Ext.MessageBox.alert("Registration failed.", "Try again or try to login.");
+				    }				    
 				});
             }
 		}

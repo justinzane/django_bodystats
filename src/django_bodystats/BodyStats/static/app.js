@@ -44,7 +44,6 @@ Ext.application({
 				xtype : 'panel',
 				region: 'center',
 				layout : 'accordion',
-				maxWidth: '960px',
 				alias: 'widget.contentpanel',
 				id: 'contentpanel'
 			}, {

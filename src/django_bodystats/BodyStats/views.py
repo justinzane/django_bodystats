@@ -54,8 +54,11 @@ def register_user(request):
     user.first_name = req_first
     user.last_name = req_last
     user.save()
-    
+        
     prof = UserProfile.objects.create(user=user, sex=req_sex, height=req_height)
     prof.save()
+    
+    user = authenticate(username=req_user, password=req_pass)
+    login(request, user)
     
     return(HttpResponse('', content_type='application/json'))
