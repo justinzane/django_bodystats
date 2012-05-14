@@ -53,12 +53,14 @@ STATICFILES_FINDERS = (
 )
 SECRET_KEY = 'd8!31%5y&amp;=4$d=j==#4sezb8_(*8ju#8(!0ocke043lx+a671@'
 MIDDLEWARE_CLASSES = (
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
 )
 ROOT_URLCONF = 'django_bodystats.urls'
 WSGI_APPLICATION = 'django_bodystats.wsgi.application'
@@ -149,21 +151,11 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-         'console':{
-            'level':'DEBUG',
-            'class':'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-        'file': {
-                 'level': 'DEBUG',
-                 'class': 'logging.FileHandler',
-                 'filename': 'django.log',
-        },
     },
     'loggers': {
         'django.request': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
             'propagate': True,
         },
     }

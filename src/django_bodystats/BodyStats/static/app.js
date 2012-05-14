@@ -37,19 +37,22 @@ Ext.application({
 			alias : 'viewport',
 			layout: 'border',
 			padding: '2%',
+				maxWidth: 960,
 			items : [{
 				xtype: 'headerpanel',
+				maxWidth: 960,
 				region: 'north'
 			}, {
 				xtype : 'panel',
+				maxWidth: 960,
 				region: 'center',
 				layout : 'accordion',
 				alias: 'widget.contentpanel',
 				id: 'contentpanel'
 			}, {
-				xtype: 'panel',
-				region: 'south',
-				html: '&copy 2012, Justin Chudgar'
+				xtype: 'footerpanel',
+				maxWidth: 960,
+				region: 'south'
 			}]
 		});
 		BodyStats.util.Util.createContent();
